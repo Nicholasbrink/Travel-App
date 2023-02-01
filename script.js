@@ -27,64 +27,63 @@ window.onload = function () {
   L.control.layers(baseMaps).addTo(map);
 
   map.addLayer(OpenStreetMap);
+
+  // currency exchange api - list quotes
+  // const options = {
+  //     method: 'GET',
+  //     url: 'https://currency-exchange.p.rapidapi.com/listquotes',
+  //     headers: {
+  //         'X-RapidAPI-Key': '12226b39a9mshfa23fe1cdb616ccp10fb0bjsnd8f20f98485c',
+  //         'X-RapidAPI-Host': 'currency-exchange.p.rapidapi.com'
+  //     }
+  //     };
+
+  //     axios.request(options).then(function (response) {
+  //         console.log(response.data);
+  //     }).catch(function (error) {
+  //         console.error(error);
+  //     });
+
+  // currency exchange api - exchange
+  const options2 = {
+    method: "GET",
+    url: "https://currency-exchange.p.rapidapi.com/exchange",
+    params: { from: "SGD", to: "MYR", q: "1.0" },
+    headers: {
+      "X-RapidAPI-Key": "12226b39a9mshfa23fe1cdb616ccp10fb0bjsnd8f20f98485c",
+      "X-RapidAPI-Host": "currency-exchange.p.rapidapi.com",
+    },
+  };
+
+  axios
+    .request(options2)
+    .then(function (response) {
+      console.log(response.data);
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
+
+  // Travel Places API - JS Axois
+
+  const options3 = {
+    method: "POST",
+    url: "https://travel-places.p.rapidapi.com/",
+    headers: {
+      "X-RapidAPI-Key": "12226b39a9mshfa23fe1cdb616ccp10fb0bjsnd8f20f98485c",
+      "X-RapidAPI-Host": "travel-places.p.rapidapi.com",
+    },
+  };
+
+  axios
+    .request(options3)
+    .then(function (response) {
+      console.log(response.data);
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
 };
-
-// currency exchange api - list quotes
-// const options = {
-//     method: 'GET',
-//     url: 'https://currency-exchange.p.rapidapi.com/listquotes',
-//     headers: {
-//         'X-RapidAPI-Key': '12226b39a9mshfa23fe1cdb616ccp10fb0bjsnd8f20f98485c',
-//         'X-RapidAPI-Host': 'currency-exchange.p.rapidapi.com'
-//     }
-//     };
-
-//     axios.request(options).then(function (response) {
-//         console.log(response.data);
-//     }).catch(function (error) {
-//         console.error(error);
-//     });
-
-// currency exchange api - exchange
-const options2 = {
-  method: "GET",
-  url: "https://currency-exchange.p.rapidapi.com/exchange",
-  params: { from: "SGD", to: "MYR", q: "1.0" },
-  headers: {
-    "X-RapidAPI-Key": "12226b39a9mshfa23fe1cdb616ccp10fb0bjsnd8f20f98485c",
-    "X-RapidAPI-Host": "currency-exchange.p.rapidapi.com",
-  },
-};
-
-axios
-  .request(options2)
-  .then(function (response) {
-    console.log(response.data);
-  })
-  .catch(function (error) {
-    console.error(error);
-  });
-
-// Travel Places API - JS Axois
-
-const options3 = {
-  method: "POST",
-  url: "https://travel-places.p.rapidapi.com/",
-  headers: {
-    "X-RapidAPI-Key": "61dda18eb2mshd59ef3cf518c795p1b5786jsn53af88ea6048",
-    "X-RapidAPI-Host": "travel-places.p.rapidapi.com",
-  },
-};
-
-axios
-  .request(options3)
-  .then(function (response) {
-    console.log(response.data);
-  })
-  .catch(function (error) {
-    console.error(error);
-  });
-
 //Sample query (nature places near San Francisco:
 //{ getPlaces(categories:["NATURE"],lat:37,lng:-122,maxDistMeters:50000) { name,lat,lng,abstract,distance,categories } }
 

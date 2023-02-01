@@ -1,4 +1,4 @@
-
+// Leaflet api for map
 var OpenStreetMap = L.tileLayer(
     "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
     {
@@ -26,3 +26,36 @@ var OpenStreetMap = L.tileLayer(
 
       map.addLayer(OpenStreetMap);
     };
+
+// currency exchange api - list quotes
+// const options = {
+//     method: 'GET',
+//     url: 'https://currency-exchange.p.rapidapi.com/listquotes',
+//     headers: {
+//         'X-RapidAPI-Key': '12226b39a9mshfa23fe1cdb616ccp10fb0bjsnd8f20f98485c',
+//         'X-RapidAPI-Host': 'currency-exchange.p.rapidapi.com'
+//     }
+//     };
+    
+//     axios.request(options).then(function (response) {
+//         console.log(response.data);
+//     }).catch(function (error) {
+//         console.error(error);
+//     });
+
+// currency exchange api - exchange
+const options2 = {
+    method: 'GET',
+    url: 'https://currency-exchange.p.rapidapi.com/exchange',
+    params: {from: 'SGD', to: 'MYR', q: '1.0'},
+    headers: {
+      'X-RapidAPI-Key': '12226b39a9mshfa23fe1cdb616ccp10fb0bjsnd8f20f98485c',
+      'X-RapidAPI-Host': 'currency-exchange.p.rapidapi.com'
+    }
+  };
+  
+  axios.request(options2).then(function (response) {
+      console.log(response.data);
+  }).catch(function (error) {
+      console.error(error);
+  });

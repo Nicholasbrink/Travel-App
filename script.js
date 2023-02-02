@@ -1,8 +1,3 @@
-var lat = 0
- var lon = 0
- var  map;
-
-
  $("#currencybtn").click("submit",function(event){
     event.preventDefault();
      var sourceCurreny= $("#currencyFrom").val().trim();
@@ -30,6 +25,11 @@ var lat = 0
   });
   
 
+ var lat = 0
+ var lon = 0
+ var  map;
+
+
  // Event listener for weather on form 
 document.querySelector("#submit-form").addEventListener("submit", function(event){
     event.preventDefault()
@@ -42,7 +42,6 @@ document.querySelector("#submit-form").addEventListener("submit", function(event
     
     let countryQueryUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${searchInput}&limit=1&appid=${apiKey}`
     
-
     $.ajax({url : countryQueryUrl}).then(function(response){
         lat = response[0].lat
         lon = response[0].lon
@@ -214,4 +213,7 @@ function imageGenerator(location){
 //       console.log(hit.pageURL);
 //     });
 //   else console.log("No hits");
+
 // });
+
+

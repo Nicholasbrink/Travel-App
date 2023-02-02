@@ -1,4 +1,8 @@
 // Leaflet api for map
+
+var lat = -27.743040084838867
+var long = 23.01875114440918
+
 var OpenStreetMap = L.tileLayer(
   "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
   {
@@ -10,9 +14,8 @@ var OpenStreetMap = L.tileLayer(
 
 window.onload = function () {
   var map = L.map("map", {
-    center: [-27.743040084838867, 23.01875114440918],
+    center: [lat, long],
     zoom: 13,
-    // Values are x and y here instead of lat and long elsewhere.
     maxBounds: [
       [-120, -220],
       [120, 220],
@@ -28,21 +31,7 @@ window.onload = function () {
 
   map.addLayer(OpenStreetMap);
 
-  // currency exchange api - list quotes
-  // const options = {
-  //     method: 'GET',
-  //     url: 'https://currency-exchange.p.rapidapi.com/listquotes',
-  //     headers: {
-  //         'X-RapidAPI-Key': '12226b39a9mshfa23fe1cdb616ccp10fb0bjsnd8f20f98485c',
-  //         'X-RapidAPI-Host': 'currency-exchange.p.rapidapi.com'
-  //     }
-  //     };
-
-  //     axios.request(options).then(function (response) {
-  //         console.log(response.data);
-  //     }).catch(function (error) {
-  //         console.error(error);
-  //     });
+}
 
   // currency exchange api - exchange
   const options2 = {
@@ -75,15 +64,15 @@ window.onload = function () {
     },
   };
 
-  axios
-    .request(options3)
-    .then(function (response) {
-      console.log(response.data);
-    })
-    .catch(function (error) {
-      console.error(error);
-    });
-};
+//   axios
+//     .request(options3)
+//     .then(function (response) {
+//       console.log(response.data);
+//     })
+//     .catch(function (error) {
+//       console.error(error);
+//     });
+
 //Sample query (nature places near San Francisco:
 //{ getPlaces(categories:["NATURE"],lat:37,lng:-122,maxDistMeters:50000) { name,lat,lng,abstract,distance,categories } }
 

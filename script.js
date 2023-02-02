@@ -1,6 +1,39 @@
   let lat = 5
   let lon = 7
   
+  console.log(lat, lon)
+
+// Leaflet api for map
+var OpenStreetMap = L.tileLayer(
+    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+    {
+      maxZoom: 19,
+      attribution:
+        '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    }
+  );
+  
+  window.onload = function () {
+    var map = L.map("map", {
+      center: [lat, lon],
+      zoom: 13,
+      maxBounds: [
+        [-120, -220],
+        [120, 220],
+      ],
+      layers: [OpenStreetMap],
+    });
+  
+    var baseMaps = {
+      "OSM Mapnick": OpenStreetMap,
+    };
+  
+    L.control.layers(baseMaps).addTo(map);
+  
+    map.addLayer(OpenStreetMap);
+  
+  }
+
   // currency exchange api - exchange
   const options2 = {
     method: "GET",
@@ -108,35 +141,3 @@ document.querySelector("#submit-form").addEventListener("submit", function(event
     
 })
 
-console.log(lat, lon)
-
-// Leaflet api for map
-var OpenStreetMap = L.tileLayer(
-    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-    {
-      maxZoom: 19,
-      attribution:
-        '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-    }
-  );
-  
-  window.onload = function () {
-    var map = L.map("map", {
-      center: [lat, lon],
-      zoom: 13,
-      maxBounds: [
-        [-120, -220],
-        [120, 220],
-      ],
-      layers: [OpenStreetMap],
-    });
-  
-    var baseMaps = {
-      "OSM Mapnick": OpenStreetMap,
-    };
-  
-    L.control.layers(baseMaps).addTo(map);
-  
-    map.addLayer(OpenStreetMap);
-  
-  }

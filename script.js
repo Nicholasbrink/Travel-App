@@ -1,37 +1,38 @@
+  let lat = 5
+  let lon = 7
+  
+  console.log(lat, lon)
+
 // Leaflet api for map
-
-var lat = -27.743040084838867
-var long = 23.01875114440918
-
 var OpenStreetMap = L.tileLayer(
-  "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-  {
-    maxZoom: 19,
-    attribution:
-      '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+    {
+      maxZoom: 19,
+      attribution:
+        '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    }
+  );
+  
+  window.onload = function () {
+    var map = L.map("map", {
+      center: [lat, lon],
+      zoom: 13,
+      maxBounds: [
+        [-120, -220],
+        [120, 220],
+      ],
+      layers: [OpenStreetMap],
+    });
+  
+    var baseMaps = {
+      "OSM Mapnick": OpenStreetMap,
+    };
+  
+    L.control.layers(baseMaps).addTo(map);
+  
+    map.addLayer(OpenStreetMap);
+  
   }
-);
-
-window.onload = function () {
-  var map = L.map("map", {
-    center: [lat, long],
-    zoom: 13,
-    maxBounds: [
-      [-120, -220],
-      [120, 220],
-    ],
-    layers: [OpenStreetMap],
-  });
-
-  var baseMaps = {
-    "OSM Mapnick": OpenStreetMap,
-  };
-
-  L.control.layers(baseMaps).addTo(map);
-
-  map.addLayer(OpenStreetMap);
-
-}
 
   // currency exchange api - exchange
   const options2 = {
@@ -94,6 +95,52 @@ window.onload = function () {
 // photos: https://pixabay.com/api/?key=33298605-dbd0a27598c1d9d88adc9dbe1&q=yellow+flowers&image_type=photo
 // Videos: https://pixabay.com/api/videos/?key=33298605-dbd0a27598c1d9d88adc9dbe1&q=yellow+flowers
 
+const API_KEY = "33298605-dbd0a27598c1d9d88adc9dbe1";
+var URL =
+  "https://pixabay.com/api/?key=" +
+  API_KEY +
+  "&q=" +
+  encodeURIComponent("user-search"); //create user-search ID on HTML and create a variable in JS to link to this element
+$.getJSON(URL, function (data) {
+  if (parseInt(data.totalHits) > 0)
+    $.each(data.hits, function (i, hit) {
+      console.log(hit.pageURL);
+    });
+  else console.log("No hits");
+});
+
+
+document.querySelector("#submit-form").addEventListener("submit", function(event){
+    event.preventDefault()
+
+    let apiKey = "b5657f205b6b0f7351867ba9e56f2a2c"
+
+    let searchInput = $("#searchCity").val()
+    
+    let countryQueryUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${searchInput}&limit=1&appid=${apiKey}`
+
+
+    $.ajax({url : countryQueryUrl}).then(function(response){
+        lat = response[0].lat
+        lon = response[0].lon
+        
+        let queryUrl = `https://api.openweathermap.org/data/2.5/forecast?units=metric&lat=${lat}&lon=${lon}&appid=${apiKey}`
+
+
+        $.ajax({url : queryUrl}).then(function(weatherResponse){   
+
+            const weatherList = weatherResponse.list
+            const weatherToday = weatherList[0]
+            
+            document.querySelector("#temp").append( "Temperature: " + weatherToday.wind.speed)
+            document.querySelector("#wind").append("Wind: " + weatherToday.main.temp )
+            document.querySelector("#humidity").append("Humidity: " + weatherToday.main.humidity)
+            
+        })
+    })
+    
+})
+
 // const API_KEY = "33298605-dbd0a27598c1d9d88adc9dbe1";
 // var URL =
 //   "https://pixabay.com/api/?key=" +
@@ -107,3 +154,4 @@ window.onload = function () {
 //     });
 //   else console.log("No hits");
 // });
+

@@ -60,7 +60,7 @@ var OpenStreetMap = L.tileLayer(
     method: "POST",
     url: "https://travel-places.p.rapidapi.com/",
     headers: {
-      "X-RapidAPI-Key": "12226b39a9mshfa23fe1cdb616ccp10fb0bjsnd8f20f98485c",
+      "X-RapidAPI-Key": "61dda18eb2mshd59ef3cf518c795p1b5786jsn53af88ea6048",
       "X-RapidAPI-Host": "travel-places.p.rapidapi.com",
     },
   };
@@ -83,14 +83,14 @@ var OpenStreetMap = L.tileLayer(
 //Your API key: 33298605-dbd0a27598c1d9d88adc9dbe1
 // PIXELBAY API-Host: https://pixabay.com/api/
 
-const options4 = {
-  method: "POST",
-  url: "https://pixabay.com/api/",
-  headers: {
-    "X-RapidAPI-Key": "33298605-dbd0a27598c1d9d88adc9dbe1",
-    "X-RapidAPI-Host": "https://pixabay.com/api/",
-  },
-};
+// const options4 = {
+//   method: "POST",
+//   url: "https://pixabay.com/api/",
+//   headers: {
+//     "X-RapidAPI-Key": "33298605-dbd0a27598c1d9d88adc9dbe1",
+//     "X-RapidAPI-Host": "https://pixabay.com/api/",
+//   },
+// };
 
 // photos: https://pixabay.com/api/?key=33298605-dbd0a27598c1d9d88adc9dbe1&q=yellow+flowers&image_type=photo
 // Videos: https://pixabay.com/api/videos/?key=33298605-dbd0a27598c1d9d88adc9dbe1&q=yellow+flowers
@@ -140,4 +140,18 @@ document.querySelector("#submit-form").addEventListener("submit", function(event
     })
     
 })
+
+// const API_KEY = "33298605-dbd0a27598c1d9d88adc9dbe1";
+// var URL =
+//   "https://pixabay.com/api/?key=" +
+//   API_KEY +
+//   "&q=" +
+//   encodeURIComponent("user-search"); //create user-search ID on HTML and create a variable in JS to link to this element
+// $.getJSON(URL, function (data) {
+//   if (parseInt(data.totalHits) > 0)
+//     $.each(data.hits, function (i, hit) {
+//       console.log(hit.pageURL);
+//     });
+//   else console.log("No hits");
+// });
 

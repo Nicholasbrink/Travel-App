@@ -9,12 +9,13 @@ document.querySelector("#submit-form").addEventListener("submit", function(event
     let apiKey = "b5657f205b6b0f7351867ba9e56f2a2c"
 
     let searchInput = $("#searchCity").val()
+
+    imageGenerator(searchInput)
     
     let countryQueryUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${searchInput}&limit=1&appid=${apiKey}`
     
 
     $.ajax({url : countryQueryUrl}).then(function(response){
-        console.log(response)
         lat = response[0].lat
         lon = response[0].lon
 
@@ -78,6 +79,39 @@ var OpenStreetMap = L.tileLayer(
         map.addLayer(OpenStreetMap); 
       }
 
+// function for generating images
+function imageGenerator(location){
+
+    const API_KEY = "33298605-dbd0a27598c1d9d88adc9dbe1";
+        var URL =
+        "https://pixabay.com/api/?key=" +
+        API_KEY +
+        "&q=" +
+        encodeURIComponent(location); //create user-search ID on HTML and create a variable in JS to link to this element
+        $.getJSON(URL, function (data) {
+            console.log(data)
+        
+        $("#images").empty()
+        
+        for(let i = 0; i< 3; i++){
+        
+                var randomIndex = Math.floor(Math.random() * data.hits.length);
+                var url = data.hits[randomIndex].previewURL
+                
+                $("#images").append(
+                    `<div class="card" style="width: 18rem;">
+                        <img src="${url}" class="card-img-top" alt="${location} ${randomIndex}">
+                                <div class="card-body">
+                                    <h5 class="">${data.hits[randomIndex].tags}</h5>
+                                </div>
+                    </div>
+                `)
+            }
+        });
+
+    
+}
+
   // currency exchange api - exchange
   const options2 = {
     method: "GET",
@@ -138,22 +172,6 @@ var OpenStreetMap = L.tileLayer(
 
 // photos: https://pixabay.com/api/?key=33298605-dbd0a27598c1d9d88adc9dbe1&q=yellow+flowers&image_type=photo
 // Videos: https://pixabay.com/api/videos/?key=33298605-dbd0a27598c1d9d88adc9dbe1&q=yellow+flowers
-
-const API_KEY = "33298605-dbd0a27598c1d9d88adc9dbe1";
-var URL =
-  "https://pixabay.com/api/?key=" +
-  API_KEY +
-  "&q=" +
-  encodeURIComponent("user-search"); //create user-search ID on HTML and create a variable in JS to link to this element
-$.getJSON(URL, function (data) {
-  if (parseInt(data.totalHits) > 0)
-    $.each(data.hits, function (i, hit) {
-      console.log(hit.pageURL);
-    });
-  else console.log("No hits");
-});
-
-
 
 
 // const API_KEY = "33298605-dbd0a27598c1d9d88adc9dbe1";

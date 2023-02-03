@@ -138,6 +138,11 @@ function imageGenerator(location) {
                 `
       );
     }
+
+    var randomIndex = Math.floor(Math.random() * data.hits.length);
+    $("body").css({ "background" : `url(${data.hits[randomIndex].previewURL})`, "background-size" : "cover" })
+    randomIndex = Math.floor(Math.random() * data.hits.length);
+    $(".jumbotron").css({ "background" : `url(${data.hits[randomIndex].previewURL})`, "background-size" : "cover" })
   });
 }
 

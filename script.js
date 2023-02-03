@@ -1,3 +1,5 @@
+$("#images").empty();
+
 $("#currencybtn").click("submit", function (event) {
   event.preventDefault();
   var sourceCurreny = $("#currencyFrom").val().trim();
@@ -121,8 +123,6 @@ function imageGenerator(location) {
     encodeURIComponent(location); //create user-search ID on HTML and create a variable in JS to link to this element
   $.getJSON(URL, function (data) {
     console.log(data);
-
-    $("#images").empty();
 
     for (let i = 0; i < 5; i++) {
       var randomIndex = Math.floor(Math.random() * data.hits.length);

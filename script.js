@@ -120,9 +120,11 @@ function imageGenerator(location){
         
         $("#images").empty()
         
+        var randomIndex = Math.floor(Math.random() * data.hits.length);
+
         for(let i = 0; i< 3; i++){
         
-                var randomIndex = Math.floor(Math.random() * data.hits.length);
+                randomIndex = Math.floor(Math.random() * data.hits.length);
                 var url = data.hits[randomIndex].previewURL
                 
                 $("#images").append(
@@ -133,7 +135,13 @@ function imageGenerator(location){
                                 </div>
                     </div>
                 `)
+                
             }
+            randomIndex = Math.floor(Math.random() * data.hits.length);
+            $("body").css({ "background" : `url(${data.hits[randomIndex].previewURL})`, "background-size" : "cover" })
+            randomIndex = Math.floor(Math.random() * data.hits.length);
+            $(".jumbotron").css({ "background" : `url(${data.hits[randomIndex].previewURL})`, "background-size" : "cover" })
+            
         });
 
     

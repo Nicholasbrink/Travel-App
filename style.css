@@ -53,3 +53,10 @@
     padding-left: 160px;
 }
 
+body {
+    background-color: aqua;
+}
+
+.jumbotron {
+    background-color: burlywood;
+}

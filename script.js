@@ -1,4 +1,5 @@
 $("#images").empty();
+$("#map").hide();
 
 $("#currencybtn").click("submit", function (event) {
   event.preventDefault();
@@ -37,6 +38,7 @@ document
   .querySelector("#submit-form")
   .addEventListener("submit", function (event) {
     event.preventDefault();
+    $("#map").show();
 
     let apiKey = "b5657f205b6b0f7351867ba9e56f2a2c";
 
@@ -141,15 +143,15 @@ function imageGenerator(location) {
       );
     }
 
-    var randomIndex = Math.floor(Math.random() * data.hits.length);
-    $("body").css({
-      background: `url(${data.hits[randomIndex].previewURL})`,
-      "background-size": "cover",
-    });
-    randomIndex = Math.floor(Math.random() * data.hits.length);
-    $(".jumbotron").css({
-      background: `url(${data.hits[randomIndex].previewURL})`,
-      "background-size": "cover",
-    });
+    // var randomIndex = Math.floor(Math.random() * data.hits.length);
+    // $("body").css({
+    //   background: `url(${data.hits[randomIndex].previewURL})`,
+    //   "background-size": "cover",
+    // });
+    // randomIndex = Math.floor(Math.random() * data.hits.length);
+    // $(".jumbotron").css({
+    //   background: `url(${data.hits[randomIndex].previewURL})`,
+    //   "background-size": "cover",
+    // });
   });
 }

@@ -1,5 +1,9 @@
-.root {
-  background-color: black;
+body {
+  background: url(./assets/eiffel-tower-3349075.jpg) no-repeat center center
+    fixed;
+  background-size: cover;
+  height: 100%;
+  overflow: scroll;
 }
 
 /* Modal Map Styling */
@@ -41,18 +45,20 @@
 
 .form-control {
   display: block;
-  width: 30%;
+
+  align-items: center;
 }
 
 #map {
-  height: 200px;
-  width: 400px;
-  padding-left: 1000px;
+  height: 300px;
+  width: 100%;
+  padding: 20px;
+  align-items: center;
 }
 
 .mapDiv {
-  padding: 10px;
-  padding-left: 160px;
+  padding: 20px;
+  align-items: center;
 }
 
 /* add-color-image-to-background */
@@ -62,12 +68,15 @@ body {
 
 /* add-currency-exchange-api */
 .card {
-  background-color: #add8e6;
+  background-color: rgba(0, 0, 0, 0.5);
   color: rgba(0, 0, 0, 0.647);
 }
 
-.jumbotron {
-  background-color: burlywood;
+.container-fluid {
+  background-color: rgba(0, 0, 0, 0.5);
+  /* background: none; */
+  color: white;
+  justify-content: center;
 }
 /* .card-group {
   object-fit: cover;
@@ -88,4 +97,11 @@ body {
   border: 5px solid;
   border-color: white;
   border-radius: 20%;
+}
+
+.h3 {
+  color: white;
+}
+
+.btn {
 }

@@ -44,6 +44,8 @@ document
 
     let searchInput = $("#searchCity").val();
 
+    // searchInput = charAt(0).toUpperCase() + searchInput.slice(1);
+
     imageGenerator(searchInput);
 
     let countryQueryUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${searchInput}&limit=1&appid=${apiKey}`;
@@ -59,19 +61,28 @@ document
       $.ajax({ url: queryUrl }).then(function (weatherResponse) {
         const weatherList = weatherResponse.list;
         const weatherToday = weatherList[0];
+        const icon = weatherToday.weather[0].icon + "@2x.png";
+
+        document.querySelector(".icon").src = "";
+        document.querySelector(".icon").append(icon);
+
+        document
+          .querySelector("#cityName")
+          .append("Todays Weather in " + searchInput + " is:");
 
         document.querySelector("#temp").innerHTML = "";
         document
           .querySelector("#temp")
-          .append("Temperature: " + weatherToday.main.temp);
+          .append("Temperature: " + weatherToday.main.temp.toFixed(1) + " °C");
+
         document.querySelector("#wind").innerHTML = "";
         document
           .querySelector("#wind")
-          .append("Wind: " + weatherToday.wind.speed);
+          .append("Wind: " + weatherToday.wind.speed + " KPH");
         document.querySelector("#humidity").innerHTML = "";
         document
           .querySelector("#humidity")
-          .append("Humidity: " + weatherToday.main.humidity);
+          .append("Humidity: " + weatherToday.main.humidity + " %");
       });
     });
     console.log(lat, lon);

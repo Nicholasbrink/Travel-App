@@ -57,6 +57,12 @@ body {
     background-color: aqua;
 }
 
+// add-currency-exchange-api
+.card {
+    background-color:#add8e6 ;
+    color: rgba(0, 0, 0, 0.647);
+  }
+
 .jumbotron {
     background-color: burlywood;
 
@@ -75,3 +81,4 @@ body {
   margin: 20px;
 
 }
+

@@ -63,11 +63,11 @@ document
         document.querySelector("#temp").innerHTML = "";
         document
           .querySelector("#temp")
-          .append("Temperature: " + weatherToday.wind.speed);
+          .append("Temperature: " + weatherToday.main.temp);
         document.querySelector("#wind").innerHTML = "";
         document
           .querySelector("#wind")
-          .append("Wind: " + weatherToday.main.temp);
+          .append("Wind: " + weatherToday.wind.speed);
         document.querySelector("#humidity").innerHTML = "";
         document
           .querySelector("#humidity")

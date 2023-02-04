@@ -1,5 +1,8 @@
-/* Modal Map Styling */
+.root {
+  background-color: black;
+}
 
+/* Modal Map Styling */
 .map-container-9,
 .map-container-10,
 .map-container-11 {
@@ -52,20 +55,20 @@
   padding-left: 160px;
 }
 
-//add-color-image-to-background
+/* add-color-image-to-background */
 body {
-    background-color: aqua;
+  background-color: aqua;
 }
 
-// add-currency-exchange-api
+/* add-currency-exchange-api */
 .card {
-    background-color:#add8e6 ;
-    color: rgba(0, 0, 0, 0.647);
-  }
+  background-color: #add8e6;
+  color: rgba(0, 0, 0, 0.647);
+}
 
 .jumbotron {
-    background-color: burlywood;
-
+  background-color: burlywood;
+}
 /* .card-group {
   object-fit: cover;
   
@@ -79,6 +82,10 @@ body {
   height: 15vw;
   object-fit: cover;
   margin: 20px;
-
 }
 
+#mages.card {
+  border: 5px solid;
+  border-color: white;
+  border-radius: 20%;
+}

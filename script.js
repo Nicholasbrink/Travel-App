@@ -114,30 +114,6 @@ function loadMap(latitude, longitude) {
 }
 
 // function for generating images
-// add-color-image-to-background
-function imageGenerator(location){
-
-    const API_KEY = "33298605-dbd0a27598c1d9d88adc9dbe1";
-        var URL =
-        "https://pixabay.com/api/?key=" +
-        API_KEY +
-        "&q=" +
-        encodeURIComponent(location); //create user-search ID on HTML and create a variable in JS to link to this element
-        $.getJSON(URL, function (data) {
-            console.log(data)
-        
-        $("#images").empty()
-        
-        var randomIndex = Math.floor(Math.random() * data.hits.length);
-
-        for(let i = 0; i< 3; i++){
-        
-                randomIndex = Math.floor(Math.random() * data.hits.length);
-                var url = data.hits[randomIndex].previewURL
-                
-                $("#images").append(
-                    `<div class="card" style="width: 18rem;">
-
 function imageGenerator(location) {
   const API_KEY = "33298605-dbd0a27598c1d9d88adc9dbe1";
   var URL =
@@ -148,113 +124,32 @@ function imageGenerator(location) {
   $.getJSON(URL, function (data) {
     console.log(data);
 
+    $("#images").empty();
+
     for (let i = 0; i < 5; i++) {
       var randomIndex = Math.floor(Math.random() * data.hits.length);
       var url = data.hits[randomIndex].previewURL;
 
       $("#images").append(
         `<div class="card" style="width: 18rem;">
-
                         <img src="${url}" class="card-img-top" alt="${location} ${randomIndex}">
                                 <div class="card-body">
                                     <h5 class="">${data.hits[randomIndex].tags}</h5>
                                 </div>
                     </div>
-//add-color-image-to-background
-                `)
-                
-            }
-            randomIndex = Math.floor(Math.random() * data.hits.length);
-            $("body").css({ "background" : `url(${data.hits[randomIndex].previewURL})`, "background-size" : "cover" })
-            randomIndex = Math.floor(Math.random() * data.hits.length);
-            $(".jumbotron").css({ "background" : `url(${data.hits[randomIndex].previewURL})`, "background-size" : "cover" })
-            
-        });
-
                 `
       );
     }
 
-
     var randomIndex = Math.floor(Math.random() * data.hits.length);
-    $("body").css({ "background" : `url(${data.hits[randomIndex].previewURL})`, "background-size" : "cover" })
+    $("body").css({
+      background: `url(${data.hits[randomIndex].previewURL})`,
+      "background-size": "cover",
+    });
     randomIndex = Math.floor(Math.random() * data.hits.length);
-    $(".jumbotron").css({ "background" : `url(${data.hits[randomIndex].previewURL})`, "background-size" : "cover" })
+    $(".jumbotron").css({
+      background: `url(${data.hits[randomIndex].previewURL})`,
+      "background-size": "cover",
+    });
   });
 }
-
-// currency exchange api - exchange
-const options2 = {
-  method: "GET",
-  url: "https://currency-exchange.p.rapidapi.com/exchange",
-  params: { from: "SGD", to: "MYR", q: "1.0" },
-  headers: {
-    "X-RapidAPI-Key": "12226b39a9mshfa23fe1cdb616ccp10fb0bjsnd8f20f98485c",
-    "X-RapidAPI-Host": "currency-exchange.p.rapidapi.com",
-  },
-};
-
-axios
-  .request(options2)
-  .then(function (response) {
-    console.log(response.data);
-  })
-  .catch(function (error) {
-    console.error(error);
-  });
-
-// Travel Places API - JS Axois
-
-const options3 = {
-  method: "POST",
-  url: "https://travel-places.p.rapidapi.com/",
-  headers: {
-    "X-RapidAPI-Key": "61dda18eb2mshd59ef3cf518c795p1b5786jsn53af88ea6048",
-    "X-RapidAPI-Host": "travel-places.p.rapidapi.com",
-  },
-};
-
-//   axios
-//     .request(options3)
-//     .then(function (response) {
-//       console.log(response.data);
-//     })
-//     .catch(function (error) {
-//       console.error(error);
-//     });
-
-//Sample query (nature places near San Francisco:
-//{ getPlaces(categories:["NATURE"],lat:37,lng:-122,maxDistMeters:50000) { name,lat,lng,abstract,distance,categories } }
-
-//PIXELBAY API
-// Documentation : https://pixabay.com/api/docs/
-
-//Your API key: 33298605-dbd0a27598c1d9d88adc9dbe1
-// PIXELBAY API-Host: https://pixabay.com/api/
-
-// const options4 = {
-//   method: "POST",
-//   url: "https://pixabay.com/api/",
-//   headers: {
-//     "X-RapidAPI-Key": "33298605-dbd0a27598c1d9d88adc9dbe1",
-//     "X-RapidAPI-Host": "https://pixabay.com/api/",
-//   },
-// };
-
-// photos: https://pixabay.com/api/?key=33298605-dbd0a27598c1d9d88adc9dbe1&q=yellow+flowers&image_type=photo
-// Videos: https://pixabay.com/api/videos/?key=33298605-dbd0a27598c1d9d88adc9dbe1&q=yellow+flowers
-
-// const API_KEY = "33298605-dbd0a27598c1d9d88adc9dbe1";
-// var URL =
-//   "https://pixabay.com/api/?key=" +
-//   API_KEY +
-//   "&q=" +
-//   encodeURIComponent("user-search"); //create user-search ID on HTML and create a variable in JS to link to this element
-// $.getJSON(URL, function (data) {
-//   if (parseInt(data.totalHits) > 0)
-//     $.each(data.hits, function (i, hit) {
-//       console.log(hit.pageURL);
-//     });
-//   else console.log("No hits");
-
-// });

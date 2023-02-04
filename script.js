@@ -29,6 +29,13 @@ $("#currencybtn").click("submit", function (event) {
     });
 });
 
+
+$(".subModal").on("click", function(event){
+
+  window.location.href = "thankYou.html";
+  
+})
+
 var lat = 0;
 var lon = 0;
 var map;

@@ -14,30 +14,30 @@
 
 <body>
 <!-- Header -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Travel App</a>
+<nav id="nav" class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#home">Travel App</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Currency Exchange</a>
+          <a class="nav-link" href="#currency">Currency Exchange</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Weather</a>
+          <a class="nav-link" href="#weather">Weather</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Location</a>
+          <a class="nav-link" href="#map">Location</a>
         </li>
       </ul>
     </div>
   </nav>
 
-    <div class="jumbotron jumbotron-fluid ">
+    <div id="home" class="jumbotron jumbotron-fluid ">
         <div class="container">
           <h1 class="display-4 headerBorder">Travel App</h1>
         </div>
@@ -60,7 +60,11 @@
       </div>    
       <br>
       <br>
+<!-- City Images Start Here -->
+      
+        <div class="card-group" id="images">
 
+// add-currency-exchange-api
       <div id="images">
 
       </div>
@@ -69,6 +73,51 @@
       <div class="card" style="width: 50rem">
           <div class="card-body">
           <h3 class="currency">Currency</h3>
+
+          <div class="card2">
+            <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+          <div class="card2">
+            <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+                                      </div>
+          </div>
+          <div class="card2">
+            <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+                                      </div>
+          </div>
+          <div class="card2">
+            <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+                                      </div>
+          </div>
+          <div class="card2">
+            <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+                                      </div>
+          </div>
+
+          
+          </div>
+
+        <!-- City Images End Here -->
+      
+      
+      </div>
+      <div class="card" style="width: 50rem">
+          <div class="card-body">
+          <h3 id="currency" class="currency">Currency</h3>
+
           <p class="description"></p>
           <div class="formDiv">
             <form id="currency-form">
@@ -92,7 +141,7 @@
  <div class="row my-6 ml-3">    
 <div class="card" style="width: 50rem">
     <div class="card-body">
-    <h3 class="weather">Weather Forecast</h3>
+    <h3 id="weather" class="weather">Weather Forecast</h3>
         <img class="icon">
         <p class="card-text description"></p>
         <p id="temp" class="card-text temp"></p>

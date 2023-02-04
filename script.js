@@ -114,6 +114,30 @@ function loadMap(latitude, longitude) {
 }
 
 // function for generating images
+// add-color-image-to-background
+function imageGenerator(location){
+
+    const API_KEY = "33298605-dbd0a27598c1d9d88adc9dbe1";
+        var URL =
+        "https://pixabay.com/api/?key=" +
+        API_KEY +
+        "&q=" +
+        encodeURIComponent(location); //create user-search ID on HTML and create a variable in JS to link to this element
+        $.getJSON(URL, function (data) {
+            console.log(data)
+        
+        $("#images").empty()
+        
+        var randomIndex = Math.floor(Math.random() * data.hits.length);
+
+        for(let i = 0; i< 3; i++){
+        
+                randomIndex = Math.floor(Math.random() * data.hits.length);
+                var url = data.hits[randomIndex].previewURL
+                
+                $("#images").append(
+                    `<div class="card" style="width: 18rem;">
+
 function imageGenerator(location) {
   const API_KEY = "33298605-dbd0a27598c1d9d88adc9dbe1";
   var URL =
@@ -130,14 +154,27 @@ function imageGenerator(location) {
 
       $("#images").append(
         `<div class="card" style="width: 18rem;">
+
                         <img src="${url}" class="card-img-top" alt="${location} ${randomIndex}">
                                 <div class="card-body">
                                     <h5 class="">${data.hits[randomIndex].tags}</h5>
                                 </div>
                     </div>
+//add-color-image-to-background
+                `)
+                
+            }
+            randomIndex = Math.floor(Math.random() * data.hits.length);
+            $("body").css({ "background" : `url(${data.hits[randomIndex].previewURL})`, "background-size" : "cover" })
+            randomIndex = Math.floor(Math.random() * data.hits.length);
+            $(".jumbotron").css({ "background" : `url(${data.hits[randomIndex].previewURL})`, "background-size" : "cover" })
+            
+        });
+
                 `
       );
     }
+
 
     var randomIndex = Math.floor(Math.random() * data.hits.length);
     $("body").css({ "background" : `url(${data.hits[randomIndex].previewURL})`, "background-size" : "cover" })

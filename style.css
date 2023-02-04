@@ -57,7 +57,7 @@ body {
 }
 
 .mapDiv {
-  padding: 20px;
+  padding: 50px;
   align-items: center;
 }
 
@@ -69,11 +69,11 @@ body {
 /* add-currency-exchange-api */
 .card {
   background-color: rgba(0, 0, 0, 0.5);
-  color: rgba(0, 0, 0, 0.647);
+  color: white;
 }
 
 .container-fluid {
-  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: rgba(0, 0, 0, 0.5); */
   /* background: none; */
   color: white;
   justify-content: center;
@@ -93,12 +93,8 @@ body {
   margin: 20px;
 }
 
-#mages.card {
+#images.card {
   border: 5px solid;
   border-color: white;
   border-radius: 20%;
-}
-
-.h3 {
-  color: white;
 }

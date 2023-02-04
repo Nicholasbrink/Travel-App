@@ -98,3 +98,8 @@ body {
   border-color: white;
   border-radius: 20%;
 }
+
+footer {
+  padding: 10px;
+  text-align: center;
+}

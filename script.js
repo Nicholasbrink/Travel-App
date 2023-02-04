@@ -97,6 +97,7 @@ function loadMap(latitude, longitude) {
     map.remove();
   }
   map = L.map("map", {
+    scrollWheelZoom: false,
     center: [latitude, longitude],
     zoom: 13,
     maxBounds: [

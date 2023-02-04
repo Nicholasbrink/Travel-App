@@ -53,3 +53,7 @@
     padding-left: 160px;
 }
 
+.card {
+    background-color:#add8e6 ;
+    color: rgba(0, 0, 0, 0.647);
+  }

@@ -1,8 +1,12 @@
-body{
-margin: 0 auto; 
+body {
+  background: url(./assets/eiffel-tower-3349075.jpg) no-repeat center center
+    fixed;
+  background-size: cover;
+  height: 100%;
+  overflow: scroll;
 }
-/* Modal Map Styling */
 
+/* Modal Map Styling */
 .map-container-9,
 .map-container-10,
 .map-container-11 {
@@ -22,51 +26,81 @@ margin: 0 auto;
 }
 
 .headerBorder {
-    margin: auto;
-    width: 50%;
-    border: 4px solid;
-    padding-left: 150px;
-    padding-bottom: 10px;
-    justify-content: center;
+  margin: auto;
+  width: 50%;
+  border: 4px solid;
+  padding-left: 150px;
+  padding-bottom: 10px;
+  justify-content: center;
 }
 
 .formDiv {
-    width: 70%;
-
-    padding-left: 50px;
-    border: 4px solid;
-    justify-content: center;
-    margin: auto;
-    padding-top: 10px;
-    padding-bottom: 10px;
+  width: 70%;
+  padding-left: 50px;
+  border: 4px solid;
+  margin: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
+.form-control {
+  display: block;
 
+  align-items: center;
+}
 
-#map { 
-    height: 180px; 
-    width : 400px;
-    padding-left: 1000px;
+#map {
+  height: 300px;
+  width: 100%;
+  padding: 20px;
+  align-items: center;
 }
 
 .mapDiv {
-    padding: 10px;
-    padding-left: 160px;
+  padding: 50px;
+  align-items: center;
 }
 
-.card {
-    background-color:#add8e6 ;
-    color: white;
-  }
-  body {
-    margin-bottom: 160px;
-  }
-  footer {
-    position: relative;
-    width: 100%;
-    height: 60px;
-    line-height: 60px;
-    background-color: #f5f5f5;
-    margin-top: 50px;
-  } 
+/* add-color-image-to-background */
+body {
+  background-color: aqua;
+}
 
+/* add-currency-exchange-api */
+.card {
+
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.container-fluid {
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  /* background: none; */
+  color: white;
+  justify-content: center;
+}
+/* .card-group {
+  object-fit: cover;
+  
+  width: 100%;
+  height: 50px;
+  padding: 50px;
+} */
+
+.card-img-top {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
+  margin: 20px;
+}
+
+#images.card {
+  border: 5px solid;
+  border-color: white;
+  border-radius: 20%;
+}
+
+footer {
+  padding: 10px;
+  text-align: center;
+}

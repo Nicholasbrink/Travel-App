@@ -66,16 +66,19 @@ document
       let queryUrl = `https://api.openweathermap.org/data/2.5/forecast?units=metric&lat=${lat}&lon=${lon}&appid=${apiKey}`;
 
       $.ajax({ url: queryUrl }).then(function (weatherResponse) {
+        document.querySelector("#weatherinfo").innerHTML = ""
         const weatherList = weatherResponse.list;
         const weatherToday = weatherList[0];
         const icon = weatherToday.weather[0].icon + "@2x.png";
 
         document.querySelector(".icon").src = "";
         document.querySelector(".icon").append(icon);
+        const searchPlace = searchInput.charAt(0).toUpperCase()+searchInput.slice(1);
 
+        document.querySelector("#cityName").innerHTML = "";
         document
           .querySelector("#cityName")
-          .append("Todays Weather in " + searchInput + " is:");
+          .append("Todays Weather in " + searchPlace + " ");
 
         document.querySelector("#temp").innerHTML = "";
         document

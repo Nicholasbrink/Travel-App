@@ -1,8 +1,11 @@
 $("#images").empty();
 $("#map").hide();
 
+
+
 $("#currencybtn").click("submit", function (event) {
   event.preventDefault();
+  console.log("I am being called when page loaded");
   var sourceCurreny = $("#currencyFrom").val().trim();
   var desireCurrency = $("#currencyTo").val().trim();
   var amount = $("#amount").val().trim();
@@ -50,6 +53,9 @@ document
     let apiKey = "b5657f205b6b0f7351867ba9e56f2a2c";
 
     let searchInput = $("#searchCity").val();
+
+    localStorage.setItem("searchCity",searchInput);
+    $("#searchCity").empty();
 
     // searchInput = charAt(0).toUpperCase() + searchInput.slice(1);
 
@@ -176,4 +182,11 @@ function imageGenerator(location) {
     //   "background-size": "cover",
     // });
   });
+}
+
+const searchHistory=localStorage.getItem("searchCity")||null;
+if( searchHistory !==null){
+  $("#searchCity").val(searchHistory);
+  document.querySelector("#submit-form").dispatchEvent(new Event('submit'));
+
 }

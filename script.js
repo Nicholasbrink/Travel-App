@@ -1,8 +1,6 @@
 $("#images").empty();
 $("#map").hide();
 
-
-
 $("#currencybtn").click("submit", function (event) {
   event.preventDefault();
   console.log("I am being called when page loaded");
@@ -32,12 +30,9 @@ $("#currencybtn").click("submit", function (event) {
     });
 });
 
-
-$(".subModal").on("click", function(event){
-
+$(".subModal").on("click", function (event) {
   window.location.href = "thankYou.html";
-  
-})
+});
 
 var lat = 0;
 var lon = 0;
@@ -54,7 +49,7 @@ document
 
     let searchInput = $("#searchCity").val();
 
-    localStorage.setItem("searchCity",searchInput);
+    localStorage.setItem("searchCity", searchInput);
     $("#searchCity").empty();
 
     // searchInput = charAt(0).toUpperCase() + searchInput.slice(1);
@@ -72,14 +67,15 @@ document
       let queryUrl = `https://api.openweathermap.org/data/2.5/forecast?units=metric&lat=${lat}&lon=${lon}&appid=${apiKey}`;
 
       $.ajax({ url: queryUrl }).then(function (weatherResponse) {
-        document.querySelector("#weatherinfo").innerHTML = ""
+        document.querySelector("#weatherinfo").innerHTML = "";
         const weatherList = weatherResponse.list;
         const weatherToday = weatherList[0];
         const icon = weatherToday.weather[0].icon + "@2x.png";
 
         document.querySelector(".icon").src = "";
         document.querySelector(".icon").append(icon);
-        const searchPlace = searchInput.charAt(0).toUpperCase()+searchInput.slice(1);
+        const searchPlace =
+          searchInput.charAt(0).toUpperCase() + searchInput.slice(1);
 
         document.querySelector("#cityName").innerHTML = "";
         document
@@ -149,6 +145,8 @@ function imageGenerator(location) {
   var URL =
     "https://pixabay.com/api/?key=" +
     API_KEY +
+    "&response_group=high_resolution" +
+    "image_type=photo" +
     "&q=" +
     encodeURIComponent(location); //create user-search ID on HTML and create a variable in JS to link to this element
   $.getJSON(URL, function (data) {
@@ -158,10 +156,9 @@ function imageGenerator(location) {
 
     for (let i = 0; i < 5; i++) {
       var randomIndex = Math.floor(Math.random() * data.hits.length);
-      var url = data.hits[randomIndex].previewURL;
-
+      var url = data.hits[randomIndex].largeImageURL;
       $("#images").append(
-        `<div class="card" style="width: 18rem;">
+        `<div class="card" style="width: 15rem;">
                         <img src="${url}" class="card-img-top" alt="${location} ${randomIndex}">
                                 <div class="card-body">
                                     <h5 class="">${data.hits[randomIndex].tags}</h5>
@@ -171,22 +168,21 @@ function imageGenerator(location) {
       );
     }
 
-    // var randomIndex = Math.floor(Math.random() * data.hits.length);
-    // $("body").css({
-    //   background: `url(${data.hits[randomIndex].previewURL})`,
-    //   "background-size": "cover",
-    // });
+    var randomIndex = Math.floor(Math.random() * data.hits.length);
+    $("body").css({
+      background: `url(${data.hits[1].fullHDURL})`,
+      "background-size": "cover",
+    });
     // randomIndex = Math.floor(Math.random() * data.hits.length);
     // $(".jumbotron").css({
-    //   background: `url(${data.hits[randomIndex].previewURL})`,
+    //   background: `url(${data.hits[randomIndex].fullHDURL})`,
     //   "background-size": "cover",
     // });
   });
 }
 
-const searchHistory=localStorage.getItem("searchCity")||null;
-if( searchHistory !==null){
+const searchHistory = localStorage.getItem("searchCity") || null;
+if (searchHistory !== null) {
   $("#searchCity").val(searchHistory);
-  document.querySelector("#submit-form").dispatchEvent(new Event('submit'));
-
+  document.querySelector("#submit-form").dispatchEvent(new Event("submit"));
 }

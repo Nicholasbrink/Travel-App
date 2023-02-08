@@ -1,6 +1,6 @@
 body {
-  background: url(./assets/eiffel-tower-3349075.jpg) no-repeat center center
-    fixed;
+  /* background: url(./assets/eiffel-tower-3349075.jpg) no-repeat center center
+    fixed; */
   background-size: cover;
   height: 100%;
   overflow: scroll;
@@ -45,8 +45,8 @@ body {
 
 .form-control {
   display: block;
-
   align-items: center;
+  max-height: 28px;
 }
 
 #map {
@@ -68,7 +68,6 @@ body {
 
 /* add-currency-exchange-api */
 .card {
-
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
 }
@@ -88,10 +87,11 @@ body {
 } */
 
 .card-img-top {
-  width: 100%;
+  width: 95%;
   height: 15vw;
   object-fit: cover;
-  margin: 20px;
+  align-content: center;
+  margin: 15px;
 }
 
 #images.card {
@@ -103,6 +103,23 @@ body {
 footer {
   padding: 10px;
   text-align: center;
+  background-color: black;
+}
+
+.card-body2 {
+  padding: 50px 50px 50px 50px;
+}
+
+.currency-form .card-text-header {
+}
+
+.card-header {
+  padding: 30px 50px 10px 50px;
+}
+
+nav {
+  color: black;
+  background: white;
 }
 
 h1 {

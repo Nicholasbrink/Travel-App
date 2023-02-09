@@ -7,7 +7,7 @@
 1. Description
 2. Website Link
 3. Website screenshots
-4. Credits
+4. Credits & Technologies Used
 5. Contributing
 6. License
 7. Contributor

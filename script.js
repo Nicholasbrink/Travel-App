@@ -145,8 +145,7 @@ function imageGenerator(location) {
   var URL =
     "https://pixabay.com/api/?key=" +
     API_KEY +
-    "&response_group=high_resolution" +
-    "image_type=photo" +
+    "&image_type=photo" +
     "&q=" +
     encodeURIComponent(location); //create user-search ID on HTML and create a variable in JS to link to this element
   $.getJSON(URL, function (data) {

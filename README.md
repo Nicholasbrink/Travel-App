@@ -14,23 +14,14 @@
 
 ## Description
 
-A travel website that displays images of a chosen city with added info on weather report, currency conversion as well as an interactive map. 
-
+A travel website that displays images of a chosen city with added info on weather report, currency conversion as well as an interactive map.
 
 - User story
   - I also want to see pictures of the current city.
-  - As a user I want to be able to search the map of where I want to visit. 
+  - As a user I want to be able to search the map of where I want to visit.
   - I would like to see the current weather in the city at this present moment.
   - I would like to subscribe to the site to get future travel tips.
   - I would like to see my currency converted in the city's currency.
-
-
-## Credits
-
-1. Open Street Map - http://www.openstreetmap.org
-2. Open Weater API - http://api.openweathermap.org
-3. Currency Coversions API - https://currency-converter-by-api-ninjas.p.rapidapi.com
-4. Images API - https://pixabay.com
 
 ## Website Link
 
@@ -38,7 +29,14 @@ https://nicholasbrink.github.io/Travel-App/
 
 ## Website Screenshot
 
-Still to be uploaded
+![Screenshot_20230209_203901](https://user-images.githubusercontent.com/117687727/217932844-f426ac86-2f6c-4918-b36c-f6154b853177.png)
+
+## Credits
+
+1. Open Street Map - http://www.openstreetmap.org
+2. Open Weater API - http://api.openweathermap.org
+3. Currency Coversions API - https://currency-converter-by-api-ninjas.p.rapidapi.com
+4. Images API - https://pixabay.com
 
 ## Contributing
 

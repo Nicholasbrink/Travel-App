@@ -1,6 +1,6 @@
 $("#images").empty();
 $("#map").hide();
-
+// Currency API
 $("#currencybtn").click("submit", function (event) {
   event.preventDefault();
   console.log("I am being called when page loaded");

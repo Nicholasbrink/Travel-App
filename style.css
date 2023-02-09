@@ -72,6 +72,7 @@ body {
   /* background: none; */
   color: white;
   justify-content: center;
+  padding-top: 50px;
 }
 /* .card-group {
   object-fit: cover;
@@ -101,8 +102,8 @@ footer {
   background-color: black;
 }
 
-.card-body2 {
-  padding: 50px 50px 50px 50px;
+.card-body {
+  padding: 40px 40px 40px 40px;
 }
 
 .card-header {

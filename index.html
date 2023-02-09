@@ -14,7 +14,7 @@
 
 <body>
   <!-- Header -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar  navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Travel App</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,19 +26,28 @@
           <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#currency">Currency Exchange</a>
+          <a class="nav-link" href="#currencyinfo">Currency Exchange</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#weather">Weather</a>
+          <a class="nav-link" href="#weatherinfo">Weather</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#map">Location</a>
         </li>
       </ul>
-    </div>
+      <div class="dropdown ml-auto">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Book
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="https://www.skyscanner.net/" target="_blank">Flights</a>
+          <a class="dropdown-item" href="https://www.booking.com/" target="_blank">Accommodation</a>
+          <a class="dropdown-item" href="https://www.enterprise.co.uk/en/home.html" target="_blank">Car Hire</a>
+        </div>
+      </div>
     <!-- Button trigger modal -->
 
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    <button type="button" class="btn btn-primary ml-2" data-toggle="modal" data-target="#exampleModal">
       Subscribe
     </button>
 
@@ -127,9 +136,8 @@
     <div class="row align-content-end justify-content-end mt-4">
       <div class="cardContainer col-lg-6 col-md-6 col-sm-12 p-0 d-flex justify-content-start">
         <div class="card col-lg-6 col-md-0  col-sm-0 pt-0 rounded-pill">   
-         
-        <div id="weather">
-          <div class="card-body2 text-center">
+          <div class="card-header">
+              <div class="card-body2 text-center">
             <img class="icon">
             <h3 class="card-text text-center text-info">Weather Forecast</h3>  
                         <p id="weatherinfo" class="text-white-50 bg-dark">To see the current Weather at Destination, Enter the Destination in Search bar</p>

@@ -61,11 +61,6 @@ body {
   align-items: center;
 }
 
-/* add-color-image-to-background */
-body {
-  background-color: aqua;
-}
-
 /* add-currency-exchange-api */
 .card {
   background-color: rgba(0, 0, 0, 0.5);
@@ -110,9 +105,6 @@ footer {
   padding: 50px 50px 50px 50px;
 }
 
-.currency-form .card-text-header {
-}
-
 .card-header {
   padding: 30px 50px 10px 50px;
 }
@@ -123,5 +115,5 @@ nav {
 }
 
 h1 {
-  color: #17a2b8!important;
+  color: #17a2b8 !important;
 }
